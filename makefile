@@ -1,3 +1,8 @@
+
+# COMO CORRER
+# make 
+
+
 dir = nada
 
 #C flags
@@ -48,17 +53,5 @@ python:
 	@python3 $(dir)/$(dir).py
 
 endif
-
-
-chico:
-	@echo "Compiling and running Java project (LabAED2)"
-	@mkdir -p out/production/LabAED2
-	@javac -d out/production/LabAED2 src/aed/*.java src/aed/utils/*.java
-	@echo "Manifest-Version: 1.0" > META-INF/MANIFEST.MF
-	@echo "Main-Class: LabAED2.out.aed.main2" >> META-INF/MANIFEST.MF
-	@jar cfm LabAED2.jar META-INF/MANIFEST.MF -C LabAED2/out/production/LabAED2 .
-	@echo "Running LabAED2..."
-	@java -jar LabAED2.jar
-	@rm -f LabAED2.jar
 
 	
