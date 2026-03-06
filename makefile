@@ -2,13 +2,13 @@
 # COMO CORRER
 # make 
 
-
 dir = nada
+
 
 #C flags
 CC = gcc
 CFLAGS = -Wall -Wextra -g
-SRC = $(dir).c
+SRC = $(dir)/$(dir).c
 OUT = $(dir).out
 
 #java flags
@@ -27,14 +27,13 @@ all: c java python
 
 #C file
 c:
-	@echo "Results in C"
-	@echo 
-	@$(CC) $(CFLAGS) -o $(OUT) $(dir)/$(SRC)
-	@./$(OUT)
-	@rm -f $(dir)/$(OUT)
-	@rm -f $(OUT)
-	@echo
-
+		@echo "Results in C"
+		@echo 
+		@$(CC) $(CFLAGS) -o $(OUT) $(SRC)
+		@./$(OUT)
+		@rm -f $(dir)/$(OUT)
+		@rm -f $(OUT)
+		@echo
 java: 
 	@echo "Results in Java"
 	@echo
@@ -53,5 +52,3 @@ python:
 	@python3 $(dir)/$(dir).py
 
 endif
-
-	
